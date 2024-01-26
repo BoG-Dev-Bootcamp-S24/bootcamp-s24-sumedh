@@ -1,0 +1,31 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('quad-desktop.jpg') center/cover;
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+.card {
+    border: 10px solid #fff;
+    padding: 20px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #257eba, #08dfbb);
+    max-width: 700px;
+    margin: auto;
+}
+
+p {
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.profile-picture {
+    height: 150px;
+    border-radius: 100%;
+    position: absolute;
+    top: 20px; 
+    left: 45%;
+}
