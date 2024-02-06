@@ -1,9 +1,9 @@
 .googleLogo {
-    width: 18%;
+    width: 10%;
 }
 
 .profilePicture {
-    width: 10%;
+    width: 5%;
 }
 
 .profile-image {
@@ -21,12 +21,15 @@ body {
 }
 
 header {
+    margin: 0;
     background-color: #057b6b;
+    padding: 10px 0;
+    height: 10%;
 }
 
 nav{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 10px;
 }
 
@@ -37,7 +40,7 @@ nav{
 
 section {
     background-color: rgb(67, 66, 66);
-    height: 77vh;
+    height: 100vh;
 }
 
 .Search {
@@ -63,8 +66,8 @@ section {
 }
 
 .search1 {
-    width: 300px;
-    height: 30px;
+    width: 400px;
+    height: 40px;
     border: 1px solid #223b6e;
     border-radius: 20px;
 }
@@ -72,11 +75,10 @@ section {
 .button {
     background-color: #2962d5;
     color: white;
-    position: absolute;
+    position: relative;
     padding: 10px 20px;
     border: none;
     border-radius: 10px;
-    margin-left: 75%;
     top: 46%;
 }
 
@@ -101,20 +103,10 @@ footer {
 }
 
 
-.search1 {
-    width: 400px;
-}
-
 .search1 placeholder {
     justify-content: flex;
 }
 
-main {
-    
-}
-
-
-  
 footer button {
     background-color: #2962d5;
     color: white;
@@ -128,4 +120,43 @@ footer button:hover {
     cursor: pointer;
     background-color: #557bc6;
 } 
+
+
+main {
+    background-color: rgb(176, 176, 176);
+    height: 90vh;
+}
+
+.container {
+    display: flex;
+    padding: 70px;
+}
+  
+.content {
+    width: 80%;
+    margin-right: 20px;
+}
+  
+.info-section {
+    background: #0d0e0e;
+    padding: 20px;
+}
+  
+.info-block {
+    background: #51af8b;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+  
+.sidePicture {
+    text-align: center;
+}
+  
+.profile-image {
+    width: 100%;
+    max-width: 500px;
+    border: 5px solid #000000;
+    margin-bottom: 5px;
+}
+  
 
