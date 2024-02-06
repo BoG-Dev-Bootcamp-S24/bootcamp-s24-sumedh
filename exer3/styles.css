@@ -23,11 +23,16 @@ body {
 header {
     margin: 0;
     background-color: #057b6b;
-    padding: 10px 0;
     height: 10%;
 }
 
 nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.nav1 {
     display: flex;
     justify-content: center;
     padding: 10px;
@@ -40,7 +45,7 @@ nav{
 
 section {
     background-color: rgb(67, 66, 66);
-    height: 100vh;
+    height: 80vh;
 }
 
 .Search {
@@ -50,113 +55,126 @@ section {
     align-items: center;
     padding-top: 160px;
 }
-
 .Google {
     font-size: 100px;
     font-weight: bold;
     color: #2371ef;
     margin-bottom: 10px;
-}
+ }
+ 
 
 .search {
-    width: 300px;
-    height: 30px;
-    border: 1px solid #223b6e;
-    border-radius: 20px;
+width: 300px;
+height: 30px;
+border: 1px solid #223b6e;
+border-radius: 20px;
 }
 
-.search1 {
-    width: 400px;
-    height: 40px;
-    border: 1px solid #223b6e;
-    border-radius: 20px;
-}
+
+
 
 .button {
-    background-color: #2962d5;
-    color: white;
-    position: relative;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    top: 46%;
+background-color: #2962d5;
+color: white;
+position: relative;
+padding: 10px 20px;
+border: none;
+border-radius: 10px;
+top: 46%;
 }
+
 
 .button:hover {
-    cursor: pointer;
-    background-color: #557bc6;
+cursor: pointer;
+background-color: #557bc6;
 }
+
 
 footer {
-    background-color: #057b6b;
-    padding-left: 10px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 100px;
+background-color: #057b6b;
+padding-left: 10px;
+bottom: 0;
+width: 100%;
+height: 100px;
 }
 
+
 .footerText {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
+display: flex;
+justify-content: center;
+padding: 20px;
+}
+
+
+
+
+.search1 {
+width: 400px;
+height: 40px;
+border: 1px solid #223b6e;
+border-radius: 20px;
+font-size: 20px;
+padding-left: 10px;
+text-align: center;
 }
 
 
 .search1 placeholder {
-    justify-content: flex;
+padding-left: 20px;
 }
+
 
 footer button {
-    background-color: #2962d5;
-    color: white;
-    position: absolute;
-    padding: 10px 20px;
-    border: none;
-    justify-content: flex-start;
+background-color: #2962d5;
+color: white;
+position: absolute;
+padding: 10px 20px;
+border: none;
+justify-content: flex-start;
 }
+
 
 footer button:hover {
-    cursor: pointer;
-    background-color: #557bc6;
-} 
-
+cursor: pointer;
+background-color: #557bc6;
+}
 
 main {
-    background-color: rgb(176, 176, 176);
-    height: 90vh;
+background-color: rgb(176, 176, 176);
+min-height: 90vh;
 }
+
 
 .container {
-    display: flex;
-    padding: 70px;
+display: flex;
+padding: 70px;
 }
-  
 .content {
-    width: 80%;
-    margin-right: 20px;
+width: 80%;
+margin-right: 20px;
 }
-  
 .info-section {
-    background: #0d0e0e;
+background: #0d0e0e;
+padding: 20px;
+}
+.info-block {
+background: #51af8b;
+padding: 15px;
+margin-bottom: 20px;
+}
+.sidePicture {
+    background-color: #51af8b;
+    text-align: center;
+    max-width: 30%;
+    border: 10px solid #000000;
     padding: 20px;
 }
-  
-.info-block {
-    background: #51af8b;
-    padding: 15px;
-    margin-bottom: 20px;
-}
-  
-.sidePicture {
-    text-align: center;
-}
-  
 .profile-image {
-    width: 100%;
-    max-width: 500px;
-    border: 5px solid #000000;
-    margin-bottom: 5px;
+width: 100%;
+max-width: 500px;
+border: 5px solid #000000;
+margin-bottom: 5px;
 }
-  
-
+ 
+ 
+ 
