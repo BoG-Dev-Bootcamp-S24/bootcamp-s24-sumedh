@@ -9,34 +9,59 @@ document.getElementById('nameForm').addEventListener('submit', async (event) => 
     const genderizeUrl = `https://api.genderize.io?name=${name}`;
     //nationality-
     const nationalizeUrl = `https://api.nationalize.io?name=${name}`;
-  
-    //solution-
-    // try {
-    //   // Fetching data from all three APIs simultaneously
-    //   const responses = await Promise.all([
-    //     fetch(agifyUrl),
-    //     fetch(genderizeUrl),
-    //     fetch(nationalizeUrl)
-    //   ]);
-  
-    //   // Parsing JSON responses
-    //   const results = await Promise.all(responses.map(response => {
-    //     if (!response.ok) {
-    //       throw new Error(`Error with the request! Status: ${response.status}`);
-    //     }
-    //     return response.json();
-    //   }));
-  
-    //   // Updating the DOM with the fetched data
-    //   document.getElementById('ageResult').textContent = `Predicted Age: ${results[0].age}`;
-    //   document.getElementById('genderResult').textContent = `Predicted Gender: ${results[1].gender}`;
-    //   document.getElementById('nationalityResult').textContent = `Top Predicted Nationality: ${results[2].country[0]?.country_id || 'Unknown'}`;
-    // } catch (error) {
-    //   console.error("There was a problem fetching the data:", error);
-    //   // Update the DOM to show the error message
-    //   document.getElementById('ageResult').textContent = 'Error fetching data';
-    //   document.getElementById('genderResult').textContent = 'Error fetching data';
-    //   document.getElementById('nationalityResult').textContent = 'Error fetching data';
-    // }
-  });
-  
+
+    // Students will write async code here to fetch data from the APIs
+    // and update the DOM with the results.
+    
+    // They should use Promise.all to handle the multiple fetch requests.
+    const fetchAge = async () => {
+        const response = await fetch(agifyUrl);
+        if (!response.ok) {
+            throw new Error("Network Error");
+        }
+        return await response.json();
+    };
+
+    const fetchGender = async () => {
+        const response = await fetch(genderizeUrl);
+        if (!response.ok) {
+            throw new Error("Network Error");
+        }
+        return await response.json();
+    };
+
+    const fetchNationality = async () => {
+        const response = await fetch(nationalizeUrl);
+        if (!response.ok) {
+            throw new Error("Network Error");
+        }
+        return await response.json();
+    };
+
+    let promises = [];
+    promises.push(fetchAge());
+    promises.push(fetchGender());
+    promises.push(fetchNationality());
+
+    const age = document.getElementById('ageResult')
+    const gender = document.getElementById('genderResult')
+    const nationality = document.getElementById('nationalityResult')
+    Promise.all(promises)
+        .then((list) => {
+            const [ageString, genderString, nationalityString] = list
+            const newageHTML = `<p> ${ageString.age} </p>`;
+            age.innerHTML = newageHTML;
+            const newgenderHTML = `<p> ${genderString.gender} </p>`;
+            gender.innerHTML = newgenderHTML;
+            const newnationalityHTML = `<p> ${nationalityString.country[0].country_id} </p>`;
+            nationality.innerHTML = newnationalityHTML;
+        }
+        )
+        .catch((error) => {
+            age.innerHTML = "Failed to get age";
+            gender.innerHTML = "Failed to get gender";
+            nationality.innerHTML = "Failed to get nationality";
+
+        });
+    // Error handling should also be implemented.
+});
