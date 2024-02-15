@@ -1,4 +1,4 @@
-import React, { /* Hint 1: Import useState from React */ } from 'react';
+import React, { useState } from 'react';
 import './TodoList.css';
 
 function TodoList() {
@@ -20,16 +20,42 @@ function TodoList() {
   // Hint 5: Define the removeTodo function to remove a todo item.
   // - Use setTodos with the filter function to create a new array.
   // - In the filter function, return only those todo items whose task doesn't match the one received in the function's argument.
+  const [todos, setTodos] = useState([]);
+  const [currTask, setcurrTask] = useState('');
+
+  const addTodo = (e) => {
+    if (currTask) {
+      setTodos([...todos, { task: currTask, completed: false }]);
+      setcurrTask('');
+    }
+  }
+
+  const toggleComplete = (task) => {
+    setTodos(todos.map(todo => todo.task === task ? { ...todo, completed: !todo.completed } : todo));
+  };
+
+  const removeTodo = (task) => {
+    setTodos(todos.filter(todo => todo.task !== task));
+  }
 
   return (
     <div className="todo-list">
       <input
         type="text"
-        // value={/* Hint 6: Bind this input to the task state variable */}
+        value={currTask}
         // onChange={/* Hint 7: Update the task state variable as the input changes */}
+        onChange={(e) => setcurrTask(e.target.value)}
         placeholder="Add new task"
       />
-      {/* <button type="submit" onClick=Hint 8: Attach the addTodo function here>Add</button> */}
+      <button type="submit" onClick={() => addTodo()}>Add</button>
+
+      {todos.map(todo => (
+        <div className={`todo-item ${todo.completed ? 'completed' : ''}`}>
+          <span onClick={() => toggleComplete(todo.task)}>{todo.task}</span>
+          <button onClick={() => removeTodo(todo.task)}>Remove</button>
+        </div>
+      ))}
+
       
       {/* Hint 9: Use the map function to iterate over the todos array and render each todo item.
           - Each todo item should be a div with a conditional class name based on its 'completed' status.
@@ -44,6 +70,12 @@ function TodoList() {
           
           
           */}
+
+
+          {/* <div className={`todo-item condtional complete class`}>
+          <span onClick={() => function to complete or uncomplete}>{todo.task}</span>
+          <button onClick={() => function to remove}>Remove</button>
+          </div>   */}
     </div>
   );
 }
