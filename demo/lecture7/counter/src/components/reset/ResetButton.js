@@ -7,7 +7,7 @@ import './ResetButton.css';
 //         Reset
 //         </button>
 //     );
-// } 
+// }
 
 function ResetButton({ onReset }) {
   return (
