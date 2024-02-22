@@ -104,7 +104,7 @@ function App() {
         </div>
 
         <div className="rightContainer">
-          <h3>Info</h3>
+          <h3>{active.charAt(0).toUpperCase() + active.slice(1)}</h3>
           {loading ? (
             <div>Loading...</div>
           ) : data ? (
