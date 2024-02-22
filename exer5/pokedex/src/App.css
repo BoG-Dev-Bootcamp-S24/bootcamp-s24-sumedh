@@ -1,0 +1,107 @@
+.App {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  font-weight: bold;
+}
+
+
+button {
+  background-color: #a2a2a2;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 10px;
+  position: relative;
+}
+
+.LeftArrow {
+  width: 80px;
+  margin-right: 20px;
+}
+.RightArrow {
+  width: 80px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+.leftContainer {
+  padding-right: 300px;
+}
+
+.ImageContainer {
+  border: 1px solid black;
+  width: 300px;
+  height: 300px; 
+  margin-top: 50px;
+  display: flex;
+}
+
+.TypeBadge {
+  display: inline-block;
+  color: white;
+  padding: 5px 10px;
+  margin: 0 5px;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.pokemonName {
+  background-color: #a2a2a2;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  border-radius: 4px;
+  font-size: 25px;
+}
+
+h4 {
+  margin: 0;
+  margin-top: 10px;
+}
+
+.InfoBox {
+  text-align: left;
+  padding: 10px;
+  width: 300px;
+  height: 300px;
+  overflow-y: auto;
+  background-color: #f0f0f0;
+  border: 1px solid #d4d4d4;
+  margin-bottom: 30px;
+}
+
+
+.InfoButton, .MovesButton {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.InfoButton.active {
+  background-color: #4CAF50;
+}
+
+.MovesButton.active {
+  background-color: #4CAF50;
+}
+
+.InfoButton:not(.active), .MovesButton:not(.active) {
+  background-color: #f0f0f0;
+}
+
+h3 {
+  text-align: center;
+}
+
